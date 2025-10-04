@@ -3,7 +3,7 @@ import numpy as np
 
 image = np.full((400, 600, 3),(204,204,204), np.uint8)
 cv2.rectangle(image, (10, 10), (590, 390), (76,76,76), 3)
-photo = cv2.imread("image_3.png")
+photo = cv2.imread("images/image_3.png")
 x, y, w, h = 40, 60, 130, 150
 resized = cv2.resize(photo, (w, h))
 image[y:y+h, x:x+w] = resized
