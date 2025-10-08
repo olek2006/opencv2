@@ -10,7 +10,7 @@ img_copy = cv2.cvtColor(img_copy, cv2.COLOR_BGR2GRAY)
 img_copy = cv2.GaussianBlur(img_copy, (5,5), 2)
 img_copy = cv2.equalizeHist(img_copy)
 
-img_copy = cv2.Canny(img_copy, 200, 100)
+img_copy = cv2.Canny(img_copy, 200, 10)
 contours, hierarchy = cv2.findContours(img_copy, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 for cnt in contours:
     area = cv2.contourArea(cnt)
