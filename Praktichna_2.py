@@ -78,7 +78,7 @@ for cnt in contours:
             shape = "squad"
         elif len(approx) == 3:
             shape = "triangle"
-        elif len(approx) > 8:
+        elif len(approx) >= 8:
             shape = "oval"
         else:
             shape = "other"
@@ -93,7 +93,8 @@ for cnt in contours:
 cv2.imshow('mask', img_copy)
 
 cv2.imshow('img', img)
-
+cv2.imwrite('result.jpg', img_copy)
 
 cv2.waitKey(0)
+
 cv2.destroyAllWindows()
