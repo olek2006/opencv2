@@ -21,8 +21,7 @@ model = keras.Sequential([layers.Dense(8, activation = 'relu', input_shape = (3,
                           layers.Dense(8, activation = 'softmax')])
 model.compile(optimizer = 'adam', loss = 'sparse_categorical_crossentropy', metrics = ['accuracy'])
 #навчання моделі
-history = model.fit(X,y, epochs = 200, verbose = 0)
-
+history = model.fit(X,y, epochs = 500, verbose = 0)
 
 #візуалізація навчання
 plt.plot(history.history['loss'], label = 'Втрата (Loss)')
