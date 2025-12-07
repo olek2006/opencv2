@@ -6,11 +6,11 @@ import numpy as np
 from tensorflow.keras.preprocessing import image
 from tensorflow.python.layers.normalization import normalization
 
-train_ds = tf.keras.preprocessing.image_dataset_from_directory('data/train',
+train_ds = tf.keras.preprocessing.image_dataset_from_directory('data/train1',
                                                                image_size = (128,128),
                                                                batch_size = 30,
                                                                label_mode = 'categorical')
-test_ds = tf.keras.preprocessing.image_dataset_from_directory('data/test',
+test_ds = tf.keras.preprocessing.image_dataset_from_directory('data/test1',
                                                                image_size = (128,128),
                                                                batch_size = 30,
                                                                label_mode = 'categorical')
@@ -47,9 +47,9 @@ history = model.fit(
 test_lost, test_acc = model.evaluate(test_ds)
 print(f'Якість:{test_acc}')
 
-class_name = ['cars', 'cats', 'dogs']
+class_name = ['apple', 'banana', 'orange']
 
-img = image.load_img('data/cat.png', target_size = (128,128))
+img = image.load_img('orange2025.jpg', target_size = (128,128))
 img_array = image.img_to_array(img)
 
 img_array = img_array / 255.0
